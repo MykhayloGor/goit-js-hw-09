@@ -1,19 +1,21 @@
 const STORAGE_KEY = 'feedback-form-state';
-const form = document.querySelector('.feedback-form');
-
 let formData = loadFromLS(STORAGE_KEY) || { email: '', message: '' };
 
-const emailInput = document.querySelector('input[name="email"]');
-const messageInput = document.querySelector('textarea[name="message"]');
-const formBtn = document.querySelector('button[type="submit"]');
-const labels = document.querySelectorAll('label');
-labels.forEach(label => {
-  label.classList.add('form-label');
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.feedback-form');
 
-emailInput.classList.add('form-input', 'email-input');
-messageInput.classList.add('form-input', 'message-input');
-formBtn.classList.add('my-button');
+  const emailInput = document.querySelector('input[name="email"]');
+  const messageInput = document.querySelector('textarea[name="message"]');
+  const formBtn = document.querySelector('button[type="submit"]');
+  const labels = document.querySelectorAll('label');
+  labels.forEach(label => {
+    label.classList.add('form-label');
+  });
+
+  emailInput.classList.add('form-input', 'email-input');
+  messageInput.classList.add('form-input', 'message-input');
+  formBtn.classList.add('my-button');git 
+});
 
 emailInput.value = formData.email;
 messageInput.value = formData.message;
