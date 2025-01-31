@@ -15,8 +15,8 @@ emailInput.classList.add('form-input', 'email-input');
 messageInput.classList.add('form-input', 'message-input');
 formBtn.classList.add('my-button');
 
-emailInput.value = formData.email;
-messageInput.value = formData.message;
+emailInput.value = formData?.email ?? '';
+messageInput.value = formData?.message ?? '';
 
 form.addEventListener('input', e => {
   formData[e.target.name] = e.target.value;
@@ -47,7 +47,7 @@ function saveToLS(key, value) {
 function loadFromLS(key) {
   try {
     const storedData = localStorage.getItem(key);
-    return JSON.parse(storedData) || {};
+    return JSON.parse(storedData) || { email: '', message: '' };
   } catch (error) {
     console.error('Error loading from local storage:', error);
     return {};
