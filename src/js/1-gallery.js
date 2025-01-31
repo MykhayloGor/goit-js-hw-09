@@ -64,6 +64,9 @@ const images = [
   },
 ];
 
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const container = document.querySelector('.gallery');
 
 function imageTemplate({ preview, original, description }) {
@@ -83,13 +86,8 @@ function imagesTemplate(items) {
 const markup = imagesTemplate(images);
 container.innerHTML = markup;
 
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
-document.addEventListener('DOMContentLoaded', () => {
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionDelay: 250,
-    animationSpeed: 300,
-    loop: true,
-  });
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionDelay: 250,
+  animationSpeed: 300,
+  loop: true,
 });
