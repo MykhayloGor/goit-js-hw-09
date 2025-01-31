@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   emailInput.classList.add('form-input', 'email-input');
   messageInput.classList.add('form-input', 'message-input');
-  formBtn.classList.add('my-button');git 
+  formBtn.classList.add('my-button');
 });
 
 emailInput.value = formData.email;
